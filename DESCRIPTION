@@ -1,0 +1,31 @@
+Package: biometrics
+Version: 1.0.1
+Date: 2025-03-27
+Title: Functions and Datasets for Forest Biometrics and Modelling
+Authors@R: c(person("Christian Salas-Eljatib", email = "cseljatib@gmail.com",role = c("aut", "cre"), comment = c(ORCID = "0000-0002-8468-0829")),
+             person("Pino", "Nicolas", role = "ctb", comment = "up to 2020"),
+             person("Riquelme", "Joaquin", role = "ctb", comment = "up to 2020"))
+Description: A system of functions and data aiming to apply quantitative
+    analyses to forest ecology, silviculture and decision-support 
+    systems. Besides, the package helps to carry out data management,
+    exploratory analysis, and model assessment. 
+License: GPL-3
+URL: https://eljatib.com
+Depends: R (>= 3.5.0)
+Imports: lattice, ggplot2, stats, graphics, datana
+Suggests: foreign, gdata, car, agricolae, multcomp
+Encoding: UTF-8
+Language: en-US
+RoxygenNote: 7.3.2
+BuildResaveData: best
+LazyData: true
+LazyDataCompression: xz
+NeedsCompilation: no
+Packaged: 2025-03-31 05:50:30 UTC; christian
+Author: Christian Salas-Eljatib [aut, cre]
+    (<https://orcid.org/0000-0002-8468-0829>),
+  Pino Nicolas [ctb] (up to 2020),
+  Riquelme Joaquin [ctb] (up to 2020)
+Maintainer: Christian Salas-Eljatib <cseljatib@gmail.com>
+Repository: CRAN
+Date/Publication: 2025-04-01 16:20:05 UTC
