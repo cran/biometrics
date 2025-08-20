@@ -4,12 +4,12 @@ bibentry(bibtype = "Manual",
   title        = "{biometrics: Functions and Datasets for Forest Biometrics and Modelling}",
   author       = "Salas-Eljatib, C.",
   year         = "2025",
-  note    = "R package version 1.0.1",
+  note    = "R package version 1.0.2",
   doi      = "10.32614/CRAN.package.biometrics",
   url      = "https://CRAN.R-project.org/package=biometrics",
 
   textVersion  =
   paste("Salas-Eljatib, C. 2025.",
         "biometrics: Functions and Datasets for Forest Biometrics and Modelling.",
-        "R package version 1.0.1","https://doi.org/10.32614/CRAN.package.biometrics")
+        "R package version 1.0.2","https://doi.org/10.32614/CRAN.package.biometrics")
 )

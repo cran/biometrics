@@ -1,0 +1,52 @@
+#' Tree-level information of forest plots across the Hawaiian archipelago.
+#' @description
+#' Diameter at breast height (or occurrence) of individual trees, shrubs
+#' and tree
+#'  ferns across 530 plots across the Hawaiian archipelago and includes native
+#'   status and cultivated status of the 185 species.
+#' @usage
+#' data(trlhawaii)
+#' @format Contains 18 variables, as follows:
+#' \describe{
+#'   \item{island}{Island name.}
+#'   \item{plot.id}{Unique numeric identifier for each plot.}
+#' \item{study}{Brief name of study.}
+#' \item{plot.area}{Plot area in m\eqn{^{2}}{^2}.}
+#' \item{longitude}{Longitude of plot in decimal degrees; WGS84 coordinate
+#'  system.}
+#' \item{latitude}{Latitude of plot in decimal degrees; WGS84 coordinate
+#'  system.}
+#' \item{year}{Year in which plot data was collected.}
+#' \item{census}{Numeric identifier for each census.}
+#' \item{tree.id}{Unique numeric identifier for each individual.}
+#' \item{scientific.name}{Genus and species of each individual following
+#' TPL v. 1.1.}
+#' \item{family}{Family of each individual following TPL v. 1.1.}
+#' \item{angiosperm}{Binary variable (`1` = yes, `0` = no) indicating whether
+#'  an individual is classified as an angiosperm following APG III.}
+#' \item{monocot}{Binary variable (`1` = yes, `0` = no) indicating whether an
+#'  individual is classified as a monocot following APG III.}
+#' \item{native.status}{Categorical variable (`native`, `alien`, `uncertain`)
+#'  indicating alien status of each individual following Wagner _et al_. (2005).}
+#' \item{cultivated.status}{Binary variable (`1` = yes, `0` = no,
+#'  `NA` = not applicable) indicating if species is cultivated following PIER.}
+#' \item{abundance}{Number of individuals (all = 1).}
+#' \item{abundance.ha}{Abundance of each individual on a per hectare basis.}
+#' \item{dbh}{Diameter at 1.3 m (in cm) for each individual; `NA` indicates that
+#' size was not measured, but was classified by size class.}
+#'  }
+#' @source
+#' The data were obtained from the DRYAD
+#'  repository at \doi{10.5061/dryad.1kk02qr}.
+#' @references
+#' - Craven D, Knight T, Barton K, Bialic-Murphy L, Cordell S,
+#' Giardina C, Gillespie T, Ostertag R, Sack L,Chase J. 2018.
+#' OpenNahele: the open Hawaiian forest plot database.
+#'  Biodiversity Data Journal 6: e28406.
+#' @examples
+#' data(trlhawaii)
+#' table(trlhawaii$island,trlhawaii$study)
+#' unique(trlhawaii$plot.id)
+#' table(trlhawaii$plot.id)
+#' tapply(trlhawaii$plot.area,trlhawaii$study,summary)
+'trlhawaii'

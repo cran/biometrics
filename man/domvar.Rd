@@ -2,7 +2,8 @@
 % Please edit documentation in R/domvar.r
 \name{domvar}
 \alias{domvar}
-\title{Function to compute the dominant stand-level variable based on a sample plot data.}
+\title{Function to compute a dominant stand-level variable based on
+a sample plot data.}
 \usage{
 domvar(
   data = data,
@@ -14,30 +15,35 @@ domvar(
 \arguments{
 \item{data}{data frame having the tree list of a sample plot.}
 
-\item{var.int}{column name with the tree-level variable of interest (e.g., height).}
+\item{var.int}{The column name of the data having the tree-level variable of
+interest (e.g., height). Can be entered as the actual name, without the
+need of using quotation marks.}
 
-\item{var.sort}{column name with the tree-level variable for defining the}
+\item{var.sort}{The column name of the data having the tree-level variable
+to be used as reference (e.g., diameter) for defining the sorting variable
+of interest.}
 
-\item{plot.area}{column name having the plot area, in square meters.}
+\item{plot.area}{A numeric value of the plot area in m\eqn{^{2}}{^2}.}
 }
 \value{
 The main output is the calculated dominant stand-variable for the
-given sample plot.
+given sample plot. The unit of the computed variable is the same as the
+one used as variable of interest.
 }
 \description{
-Computes the so-called dominant stand-level variable, corresponding 
-to the average of a tree-level variable for the 100 largest 
+Computes the so-called dominant stand-level variable, corresponding
+to the average of a tree-level variable for the 100 largest
 sorting-tree-level diameter trees in 1-ha.
 }
 \details{
 The original function was written by Dr Oscar García for computing
-top height, and the corresponding reference is provided. Nevertheless, 
+top height, and the corresponding reference is provided. Nevertheless,
 several changes were applied, thus the current function provide a broader
-application. Regardless, the function aims to calculate a "dominant" 
-stand-level variable by taking into account the plot area. 
+application. Regardless, the function aims to calculate a "dominant"
+stand-level variable by taking into account the plot area.
 Thus, requires having a dataframe having both the variable
 of interest (e.g., height) and the sorting variable used for the
- computation (e.g., diameter) for all trees in a sample plot, as well as, 
+computation (e.g., diameter) for all trees in a sample plot, as well as,
 the plot area.
 }
 \examples{
@@ -49,11 +55,13 @@ df<-data.frame(dap=x,atot=y)
 head(df)
 datana::descstat(df)
 ##Using the domvar function
-domvar(data=df,var.int="atot",var.sort="dap",plot.area=500)
+domvar(data=df,var.int=atot,var.sort=dap,plot.area=500)
 }
 \references{
-- Garcia O, Batho A. 2005. Top height estimation in lodgepole pine
- sample plots. Western Journal of Applied forestry 20(1):64-68.
+\itemize{
+\item García O, Batho A. 2005. Top height estimation in lodgepole pine
+sample plots. Western Journal of Applied forestry 20(1):64-68.
+}
 }
 \author{
 Christian Salas-Eljatib.

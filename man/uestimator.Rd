@@ -12,25 +12,25 @@ already sorted by a sorting-variable.}
 
 \item{nare}{number of trees per are for the sample plot. Remember that
 1 are=100 m2 or 1 ha=100 ares. "nare" it is an alternative to express
- stand density in trees/ha, here instead the unit is "trees/are".
-  nare=length(y.by.sortx)/(plot.area.ares).  If "nare" is not an integer, it 
-  is rounded to the nearest integer, with a warning.}
+stand density in trees/ha, here instead the unit is "trees/are".
+nare=length(y.by.sortx)/(plot.area.ares).  If "nare" is not an integer, it
+is rounded to the nearest integer, with a warning.}
 }
 \value{
 The main output is the U-estimator
 }
 \description{
-Computes the \eqn{U}-estimator for integer trees per-are (1 ha=100ares)
+Computes the $U$-estimator for integer trees per-are (1 ha=100ares)
 }
 \details{
-The original function was written by Dr Oscar García, and 
-the corresponding reference is provided. The current function has only some 
+The original function was written by Dr Oscar García, and
+the corresponding reference is provided. The current function has only some
 small changes.
 }
 \examples{
 
 #Creates a fake dataframe
-h <- c(29.1,28, 24.5, 26, 21,20.5,20.1); 
+h <- c(29.1,28, 24.5, 26, 21,20.5,20.1);
 trees.per.plot<-35; plot.area.m2<-500;
 exp.factor.ha<-10000/plot.area.m2;exp.factor.ha
 #Remember 1 are= 100 m2 o 1 ha= 100 ares
@@ -42,8 +42,10 @@ n.are<-trees.per.plot/plot.area.ares;n.are
 uestimator(y.by.sortx=h,nare=n.are)
 }
 \references{
-- Garcia O, Batho A. 2005. Top height estimation in lodgepole pine 
+\itemize{
+\item Garcia O, Batho A. 2005. Top height estimation in lodgepole pine
 sample plots. Western Journal of Applied forestry 20(1):64-68.
+}
 }
 \author{
 Dr Oscar García.

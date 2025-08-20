@@ -1,0 +1,97 @@
+#' Datos de mortalidad de lianas en árboles tropicales
+#'
+#' @description
+#' Los datos provienen de un estudio que fue parte del proyecto "Diversidad y
+#' dinámica de epífitas vasculares en los Andes colombianos".
+#' apoyado por COLCIENCIAS (contrato 2115-2013). Este conjunto de datos tiene
+#'  43 columnas
+#'  y 4247 filas. Cada fila corresponde a un individuo epifito ubicado en
+#'  secciones confiables de los árboles hospedantes
+#' Los datos corresponden a la primera gran escala
+#' evaluación de la mortalidad de epífitas vasculares en los neotrópicos.
+#' Basado en dos encuestas anuales consecutivas,
+#' Seguimos el destino de 4247 epífitas para estimar la tasa de mortalidad
+#' de epífitas en 116 árboles hospedantes.
+#' en nueve sitios. Se tomaron variables adicionales del area de estudio
+#'  para encontrar relaciones
+#' con mortalidad de epifitas.
+#' @usage
+#' data(deadlianas2)
+#' @format Variables se describen a continuación::
+#' \describe{
+#' \item{PlotSite}{Nombre del municipio de los 9 sitios de estudio.}
+#' \item{Y.Plot}{Latitud del grafico en grados decimales.}
+#' \item{X.Plot}{Longitud de la grafica en grados decimales.}
+#' \item{PhoroNo}{número de identificacion de los árboles hospedantes
+#' muestreados en cada sitio}
+#' \item{EpiFam}{Familia taxonomica de epifitas.}
+#' \item{EpiGen}{Genero taxonomico de epifitas.}
+#' \item{cf.aff}{Abreviaturas de terminos latinos en el contexto de la
+#' taxonomia. cf. "conferir" que significa "comparar con". aff .: "affinis"
+#' que significa "similar a".}
+#' \item{Species}{Nombre de la especie epifita (morfo)}
+#' \item{Author}{Autor del nombre científico.}
+#' \item{EpiAzi}{Azimut del individuo epifito en cada árbol huesped.}
+#' \item{BraAzi}{Azimut de la rama en la que se encontro el individuo epifito.}
+#' \item{EpiDisTru}{Distancia en metros desde el tronco hasta el sitio de union
+#'  de la epifita en una rama.}
+#' \item{EpiSize}{Tamaño estimado del individuo epifito en centimetros.}
+#' \item{EpiAttHei}{Altura del accesorio de la epifita en metros.}
+#' \item{Date0}{Fecha del primer censo.}
+#' \item{Date1}{Fecha del censo final.}
+#' \item{Location}{Seccion (raices, troncos, ramas) del árbol anfitrion en el
+#'  que se encontro el individuo epifito.}
+#' \item{Mortality}{Variable dicotomica. 0 si el individuo epifito estaba
+#' muerto en el censo final y 1 si no.}
+#' \item{MorCat}{Causa de mortalidad mecanica o no mecánica.}
+#' \item{Elevation}{Elevacion (msnm) de la parcela.}
+#' \item{AP_bio12}{Precipitación anual en la parcela, en mm.}
+#' \item{PDM_bio14}{Precipitación del mes más seco en la parcela, en mm.}
+#' \item{PS_bio15}{Estacionalidad de la precipitacion en la parcela
+#'  (coeficiente de variacion)}
+#' \item{MDT_bio2}{Rango diurno medio (Media mensual
+#' (temperatura maxima - temperatura minima)) en la grafica (10°C)}
+#' \item{TS_bio4}{Estacionalidad de la temperatura en la grafica
+#' (desviacion estandar * 100)}
+#' \item{ATR_bio7}{Rango de temperatura anual en la parcela
+#' (10 grados centigrados)}
+#' \item{AET}{Evapotranspiración anual en la parcela, en mm.}
+#' \item{BasAre}{Area basal de árboles con DAP mayor o igual a 5 cm en
+#' la parcela, en m\eqn{^{2}}{^2}/ha.}
+#' \item{BasAre5_10}{Area basal de árboles con DAP mayor o igual a 5 y
+#' menor a 10 cm en la parcela (m\eqn{^{2}}{^2}/ha)}
+#' \item{BasAre10}{Area basal de árboles con DAP mayor o igual a 10 cm en
+#'  la parcela (m\eqn{^{2}}{^2}/ha)}
+#' \item{Ind10}{Número de árboles del dosel (con un DAP superior o
+#' igual a 10 cm) en la parcela}
+#' \item{Ind5}{Número de árboles de sotobosque (con DAP mayor o igual
+#' a 5 y menor a 10 cm) en la parcela}
+#' \item{Ind5_10}{Número de árboles con un DAP mayor o igual a 5 y menos
+#' de 10 cm en la parcela}
+#' \item{Ind10_15}{Número de árboles con un DAP mayor o igual a 10 y menos
+#'  de 15 cm en la parcela}
+#' \item{Ind15_20}{Número de árboles con un DAP mayor o igual a 15 y menos
+#' de 20 cm en la parcela}
+#' \item{Ind20_25}{Número de árboles con un DAP mayor o igual a 20 y menos
+#' de 25 cm en la parcela}
+#' \item{Ind25_30}{Número de árboles con un DAP mayor o igual a 25 y menos
+#' de 30 cm en la parcela}
+#' \item{Ind30}{Número de árboles con DAP mayor o igual a 30 cm en la parcela}
+#' \item{TreeHei}{Altura total del árbol en metros}
+#' \item{MedHei}{Altura media de los árboles en cada parcela}
+#' \item{MaxHei}{Altura maxima de los árboles en cada parcela}
+#' \item{BranchNumb}{Número de ramas del árbol anfitrion}
+#' \item{Obs}{Observaciones y notas en español}
+#'  }
+#' @source
+#' Los datos fueron obtenidos desde el repositorio
+#' DRYAD \doi{10.5061/dryad.g5510}.
+#' @references
+#' Zuleta D, Benavides AM, Lopez-Rios V, Duque A. 2016. Local and
+#' regional determinants
+#' of vascular epiphyte mortality in the Andean mountains of Colombia.
+#' Journal of Ecology 104(3): 841-843. \doi{10.1111/1365-2745.12563}
+#' @examples
+#' data(deadlianas2)
+#' head(deadlianas2)
+'deadlianas2'

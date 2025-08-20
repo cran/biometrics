@@ -1,0 +1,39 @@
+#' Tree spatial coordinates in a large sample plot in Fennoscandia
+#'
+#' @description
+#' Data from a large (8.8 ha) fully mapped plot in a Norway spruce (*Picea abies*)
+#' dominated old-growth forest in the subarctic region of Fennoscandia.
+#' @usage
+#' data(largeplot)
+#' @format Contains Cartesian position of trees and other variables in
+#' a large sample plot, as follows:
+#' \describe{
+#'   \item{tree}{Tree ID.}
+#'   \item{spp.code}{Species code as follows:
+#'   1=Pinus sylvestris,2=Picea abies,3=Betula pubescens,
+#'   5=Salix caprea, 8: Sorbus aucuparia.}
+#' \item{x.coord}{Cartesian position in the X-axis, in m.}
+#' \item{y.coord}{Cartesian position in the Y-axis, in m.}
+#' \item{status}{Measurement year.}
+#' \item{dbh}{Diameter at breast-height, in cm.}
+#' \item{toth}{Total height, in m.}
+#'  }
+#' @source
+#' Data were retrieved from the paper cited below, where several details
+#' might be worth reading.
+#' @references
+#' - Pouta P, Kulha N, Kuuluvainen T, Aakala T. 2022. Partitioning of space
+#' among trees in an old-growth spruce forest in subarctic Fennoscandia.
+#' Frontiers in Forests and Global Change 5: 817248.
+#'  \doi{https://doi.org/10.3389/ffgc.2022.817248}
+#' @examples
+#' data(largeplot)
+#' head(largeplot)
+#' df<-largeplot
+#' pine <- df[df$spp.code==1,]
+#' spruce <- df[df$spp.code==2,]
+#' birch <- df[df$spp.code==3,]
+#' plot(spruce$x.coord,spruce$y.coord,cex=(spruce$dbh)/30,col="blue")
+#' points(birch$x.coord,birch$y.coord,cex=(birch$dbh)/30,col="green")
+#' points(pine$x.coord,pine$y.coord,cex=(pine$dbh)/30,col="red")
+"largeplot"
