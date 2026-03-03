@@ -5,25 +5,28 @@
 \title{Function to compute a dominant stand-level variable based on
 a sample plot data.}
 \usage{
-domvar(
-  data = data,
-  var.int = var.int,
-  var.sort = var.sort,
-  plot.area = plot.area
-)
+domvar(data, varint, varsort, plot.area, ndom.ha = 100)
 }
 \arguments{
-\item{data}{data frame having the tree list of a sample plot.}
+\item{data}{the tree-list dataframe of a sample plot, having
+at least column \code{varint}.}
 
-\item{var.int}{The column name of the data having the tree-level variable of
-interest (e.g., height). Can be entered as the actual name, without the
+\item{varint}{The column name of the data having the tree-level variable of
+interest (e.g., "toth"). Can be entered as the actual name, without the
 need of using quotation marks.}
 
-\item{var.sort}{The column name of the data having the tree-level variable
-to be used as reference (e.g., diameter) for defining the sorting variable
-of interest.}
+\item{varsort}{The column name of the data having the tree-level variable
+to be used as reference (e.g., "dbh") for defining the sorting variable
+of interest. If there is only data for the \code{varint} column,
+colum \code{varsort} can be the same as in \code{varint}.}
 
-\item{plot.area}{A numeric value of the plot area in m\eqn{^{2}}{^2}.}
+\item{plot.area}{A numeric value of the plot area in m\eqn{^{2}}{^2}.
+Notice that in a tree list, the plot area is also a column, thus,
+the option \code{plot.area} can also be the column name where the
+surface of the plot is keept. In such a case, the area to be used
+for the computation is the average of the plot.}
+
+\item{ndom.ha}{It is the number of trees/ha used as reference. By default \code{ndom.ha} is set to 100..}
 }
 \value{
 The main output is the calculated dominant stand-variable for the
@@ -31,14 +34,14 @@ given sample plot. The unit of the computed variable is the same as the
 one used as variable of interest.
 }
 \description{
-Computes the so-called dominant stand-level variable, corresponding
-to the average of a tree-level variable for the 100 largest
-sorting-tree-level diameter trees in 1-ha.
+Computes the so-called dominant stand-level variable,
+corresponding to the average of a tree-level variable for
+the \code{nref.ha} largest sorting-tree-level diameter trees in 1-ha.
 }
 \details{
 The original function was written by Dr Oscar García for computing
 top height, and the corresponding reference is provided. Nevertheless,
-several changes were applied, thus the current function provide a broader
+several changes were applied, to make the current function provide a broader
 application. Regardless, the function aims to calculate a "dominant"
 stand-level variable by taking into account the plot area.
 Thus, requires having a dataframe having both the variable
@@ -48,14 +51,16 @@ the plot area.
 }
 \examples{
 
-##Creates a fake dataframe
-set.seed(45)
-x <- round(rnorm(20,mean=45,sd=10),1); y=round(1.3+35*(1-exp(-.07*x)),1)
-df<-data.frame(dap=x,atot=y)
-head(df)
-datana::descstat(df)
-##Using the domvar function
-domvar(data=df,var.int=atot,var.sort=dap,plot.area=500)
+# Dataframe to be used
+df<-biometrics::eucaplot2
+#' ?eucaplot2
+#' head(df)
+datana::descstat(df[,c("dap","atot")])
+#' # Using the domvar function
+domvar(data=df,varint = "atot",varsort = "atot",plot.area = 500)
+domvar(data=df,varint = "atot",varsort = "dap",plot.area = 500)
+domvar(data=df,varint = "atot",varsort = "dap",plot.area = 500,ndom.ha = 50)
+
 }
 \references{
 \itemize{

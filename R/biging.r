@@ -1,0 +1,63 @@
+#' @title Taper equation by Biging
+#'
+#' @description
+#' Tree taper equation proposed by Biging (1984), that depends on
+#' model parameters and tree size variables: diameter, total height,
+#' and stem height. The mathematical model is:
+#'
+#' \deqn{
+#' d_{l_i} = d_i ( \beta_0 + \beta_1 ln(1 - \lambda (h_{l_i} / h_i )^\frac{1}{3}))
+#' }
+#'
+#' where: \eqn{d_{l_i}} is the stem diameter at stem-height \eqn{h_{l_i}} for the
+#' *i*-th tree; \eqn{d_i} and \eqn{h_i} are the tree-level variables diameter
+#' at breast height and total height, respectively,  and
+#'
+#' \deqn{
+#' \lambda = 1 - e^{(\frac{-\beta_0}{\beta_1})}
+#' }
+#'
+#' @param d is the diameter at breast height (1.3 m) of the tree.
+#' The measurement unit is cm in the metric system, but ultimately
+#' it will depend on how the model was previously fitted, because
+#' of the measurement unit of the variables included.
+#' @param hl hl is stem height within the tree, thus \eqn{h_l \leq h}.
+#' @param h is total height of the tree.
+#' @param paramod paramod is a vector having the coefficients of the
+#' model in the following order: \eqn{\beta_0}, \eqn{\beta_1}.
+#'
+#' @returns
+#' Returns the diameter of the stem at the stem-height \eqn{h_l}, thus
+#' \eqn{d_l}, for the Biging (1984) functional form, based upon tree
+#' diameter \eqn{d} and total height \eqn{h}.
+#'
+#' @examples
+#' ## Parameters
+#' b0 <- 1.016215
+#' b1 <- 0.332529
+#' coefs <- c(b0, b1)
+#' 
+#' ## Tree attributes
+#' dbh <- 40
+#' toth <- 25
+#' 
+#' ## Using the function
+#' hl.int <- c(0.3, 1.3, 5)
+#' dl.hat <- biging.fx(d = dbh, h = toth, hl = hl.int, paramod=coefs)
+#' cbind(hl.int, dl.hat)
+#' 
+#' @references
+#' - Biging GS. 1984. Taper equations for second-growth mixed
+#' conifers of northern California. Forest Science 30(4):
+#' 1103–1117. \doi{10.1093/forestscience/30.4.1103}
+#'
+#' @rdname biging.fx
+#' @export
+######################################################################
+biging.fx <- function(d, hl, h, paramod) {
+    b0 <- paramod[1]
+    b1 <- paramod[2]
+    lambda <- 1 - exp(-b0 / b1)
+    dl <- d * (b0 + b1 * log(1 - lambda * (hl / h)^(1 / 3)))
+    return(dl)
+}

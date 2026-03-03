@@ -10,9 +10,9 @@
 #' @param x is the object (i.e., vector or scalar) having tree diameter.
 #' By default the function assumes that the unit of measurement of
 #' this variable is cm.
-#' @param metrics is a logic value, the default is to `TRUE`, thus the diameter
+#' @param metric is a logic value, the default is to `TRUE`, thus the diameter
 #' has to be expressed in cm, and the resulting basal area will be expressed
-#'  in m\eqn{^{2}}{^2}. If metrics is `FALSE`, the diameter has to be in inches
+#'  in m\eqn{^{2}}{^2}. If `metric` is `FALSE`, the diameter has to be in inches
 #'  and the resulting basal area will be in ft\eqn{^{2}}{^2}.
 #'
 #' @return The value of basal area in m\eqn{^{2}}{^2} or in ft\eqn{^{2}}{^2},
@@ -25,12 +25,12 @@
 #' #Using the function
 #'  gtree(40)
 #'  gtree(x=30)
-#' gtree(x=11.81,metrics=FALSE)
+#' gtree(x=11.81,metric=FALSE)
 #'
 #' @rdname gtree
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-gtree <- function(x,metrics=TRUE){
-  if(metrics==TRUE){x^2*(pi/40000)} else {
+gtree <- function(x,metric=TRUE){
+  if(metric==TRUE){x^2*(pi/40000)} else {
     x^2*(pi/(4*144))}   }                               #

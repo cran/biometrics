@@ -4,16 +4,16 @@
 \alias{gtree}
 \title{Function to compute basal area of a tree}
 \usage{
-gtree(x, metrics = TRUE)
+gtree(x, metric = TRUE)
 }
 \arguments{
 \item{x}{is the object (i.e., vector or scalar) having tree diameter.
 By default the function assumes that the unit of measurement of
 this variable is cm.}
 
-\item{metrics}{is a logic value, the default is to \code{TRUE}, thus the diameter
+\item{metric}{is a logic value, the default is to \code{TRUE}, thus the diameter
 has to be expressed in cm, and the resulting basal area will be expressed
-in m\eqn{^{2}}{^2}. If metrics is \code{FALSE}, the diameter has to be in inches
+in m\eqn{^{2}}{^2}. If \code{metric} is \code{FALSE}, the diameter has to be in inches
 and the resulting basal area will be in ft\eqn{^{2}}{^2}.}
 }
 \value{
@@ -34,7 +34,7 @@ the metric or imperial system.
 #Using the function
  gtree(40)
  gtree(x=30)
-gtree(x=11.81,metrics=FALSE)
+gtree(x=11.81,metric=FALSE)
 
 }
 \author{

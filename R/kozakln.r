@@ -56,14 +56,14 @@
 #' 
 #' # Using the function
 #' hl.int <- c(0.3, 1.3, 5)
-#' dl.hat <- kozakln(d=dbh,h=toth,hl=hl.int,paramod=coefs,p=p.coef)
+#' dl.hat <- kozakln.fx(d=dbh,h=toth,hl=hl.int,paramod=coefs,p=p.coef)
 #' cbind(hl.int,dl.hat)
 #' 
-#' @rdname kozakln
+#' @rdname kozakln.fx
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-kozakln <- function(d=d, h=h, hl=hl, paramod=paramod, p=0.2, c0=0.001) {
+kozakln.fx <- function(d, h, hl, paramod, p=0.2, c0=0.001) {
   alpha.0 <- paramod[1];  alpha.1 <- paramod[2]
   alpha.2 <- paramod[3];  beta.1 <- paramod[4]
   beta.2 <- paramod[5];  beta.3 <- paramod[6]

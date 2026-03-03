@@ -4,10 +4,10 @@
 #' is as follows
 #' \deqn{
 #'    d_{l_{i}} =
-#'     \alpha_0d_i^{\alpha_1}\alpha_2^{d_i}X_{l_{i}}^{
-#' \left[\beta_1z_{l_{i}}^{2}+\beta_2\ln{(z_{l_{i}} + 0,001)}
+#'     \alpha_0 d_i^{\alpha_1}\alpha_2^{d_i}X_{l_{i}}^{
+#' \left[\beta_1 z_{l_{i}}^{2} +\beta_2 \ln{(z_{l_{i}} + 0.001)}
 #' + \beta_3\sqrt{z_{l_{i}}}+
-#' \beta_4 e^{z_{l_{i}}}+\beta_5(d_i/h_i)\right] 
+#' \beta_4 \mathrm{e}^{z_{l_{i}}} +\beta_5 (d_i/h_i)\right] 
 #' },}
 #' where: \eqn{d_{l_{i}}} is the stem diameter at stem-height
 #' \eqn{h_{l_{i}}} for the *i*-th tree; and 
@@ -55,14 +55,14 @@
 #' 
 #' # Using the function
 #' hl.int <- c(0.3, 1.3, 5)
-#' dl.hat <- kozak(d=dbh,h=toth,hl=hl.int,paramod=coefs,p=p.coef)
+#' dl.hat <- kozak.fx(d=dbh,h=toth,hl=hl.int,paramod=coefs,p=p.coef)
 #' cbind(hl.int,dl.hat)
 #' 
-#' @rdname kozak
+#' @rdname kozak.fx
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-kozak <- function(d=d, h=h, hl=hl, paramod=paramod, p=0.2, c0=0.001) {
+kozak.fx <- function(d,h,hl,paramod,p=0.2,c0=0.001){
   alpha.0 <- paramod[1];  alpha.1 <- paramod[2]
   alpha.2 <- paramod[3];  beta.1 <- paramod[4]
   beta.2 <- paramod[5];  beta.3 <- paramod[6]

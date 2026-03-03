@@ -3,17 +3,19 @@
 \docType{data}
 \name{standtabRauli2}
 \alias{standtabRauli2}
-\title{Tablas de rodal para bosques de Nothofagus alpina (rauli)}
+\title{Tablas de rodal para bosques de \emph{Nothofagus alpina} (raulí)}
 \format{
 Los datos tienen las siguientes columnas
 \describe{
 \item{sitio}{Nombre del sitio de estudio.}
-\item{sector}{Code of a specific location within the study site.}
+\item{sector}{Código identificador de un sector específico
+dentro del sitio en estudio.}
 \item{linf.cd}{Límite inferior de la clase diamétrica, en cm.}
 \item{lsup.cd}{Límite superior de la clase diamétrica, en cm.}
 \item{cd}{Marca de la clase diamétrica, en cm.}
 \item{nha.cd}{Densidad de la clase diamétrica, en arb/ha.}
-\item{bosque.id}{Identificador del bosque, combinacion de sitio y sector.}
+\item{bosque.id}{Identificador del bosque, combinación de
+\code{sitio} y \code{sector}.}
 }
 }
 \source{
@@ -24,8 +26,8 @@ Datos digitados desde el cuadro No. 4 de Wadsworth (1976).
 data(standtabRauli2)
 }
 \description{
-Tablas de rodal para bosques secundarios dominados por Nothofagus alpina
-en diferentes localidades del sur de Chile.
+Tablas de rodal para bosques secundarios dominados
+por \emph{Nothofagus alpina} en diferentes localidades del sur de Chile.
 }
 \examples{
 data(standtabRauli2)
@@ -36,9 +38,10 @@ table(df$sitio,df$sector,df$cd)
 \references{
 \itemize{
 \item Wadsworth RK. 1976. Aspectos ecologicos y crecimiento del
-rauli (Nothofagus alpina) y sus asociados en bosques de segundo crecimiento
-de las provincias de Bio-Bio, Malleco y Cautin, Chile.
-Boletin Tecnico No. 37, Fac. Cs. Forestales, Universidad de Chile,
+raulí (\emph{Nothofagus alpina}) y sus asociados en bosques de
+segundo crecimiento
+de las provincias de Bío-Bío, Malleco y Cautín, Chile.
+Boletin Técnico No. 37, Fac. Cs. Forestales, Universidad de Chile,
 Santiago, Chile.
 }
 }

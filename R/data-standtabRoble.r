@@ -1,0 +1,35 @@
+#' Stand table for _Nothofagus obliqua_ (roble) secondary forests
+#'
+#' @description
+#' Average stand table for secondary forests of _Nothofagus obliqua_
+#' (roble) forests, between 40 and 50 years-old, in the
+#' Malleco, Cautín, and Valdiva provinces in southern  Chile.
+#' @usage
+#' data(standtabRoble)
+#' @format The data has the following columns
+#' \describe{
+#' \item{diam.cl}{Diameter class, in cm.}
+#' \item{nha}{Density for the respective diameter class,
+#' in trees/ha.}
+#'  }
+#' @source
+#' The stand table is from Puente et al. (1979), as a part of
+#' a study regarding secondary _Nothofagus_ forests in
+#' southern Chile.
+#' @references
+#' - Puente M, C Donoso, R Peñaloza, E Morales. 1979. Estudio de
+#' raleo y otras técnicas para el manejo de renovales de
+#' raulí (_Nothofagus alpina_) y roble (_Nothofagus obliqua_).
+#' Etapa I: Identificación y caracterización de renovales de raulí
+#' y roble. Informe de convenio No. 5, Proyecto
+#' CONAF/PNUD/FAO-CHI/76/003, Santiago, Chile. 88 p.
+#' @examples
+#' data(standtabRoble)
+#' df<-standtabRoble
+#' df<-df[-nrow(df),]
+#' # Diameter distribution plot 
+#' barplot(df$nha, legend = TRUE, beside = TRUE, las=1,
+#'         names.arg = df$diam.cl,
+#'         ylab="Density (trees/ha)",xlab="Diameter class (cm)")
+#' abline(h=0)
+"standtabRoble"

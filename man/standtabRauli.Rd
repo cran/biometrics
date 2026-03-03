@@ -3,7 +3,7 @@
 \docType{data}
 \name{standtabRauli}
 \alias{standtabRauli}
-\title{Stand tables for Nothofagus alpina (rauli) forests}
+\title{Stand tables for \emph{Nothofagus alpina} (raulí) forests}
 \format{
 The data has the following columns
 \describe{
@@ -12,9 +12,10 @@ The data has the following columns
 \item{low.cd}{Lower limit of the diameter class, in cm.}
 \item{upp.cd}{Upper limit of the diameter class, in cm.}
 \item{dclass}{Diameter class, in cm.}
-\item{nha.dcl}{Tree density for the respective diameter class, in trees/ha.}
-\item{forest.id}{Forest ID code, a combination of columns 'site' and
-'sector'.}
+\item{nha.dcl}{Tree density for the respective diameter class,
+in trees/ha.}
+\item{forest.id}{Forest ID code, a combination of columns \code{site}
+and \code{sector}.}
 }
 }
 \source{
@@ -25,7 +26,7 @@ Data were digitized from table No. 4 of Wadsworth (1976).
 data(standtabRauli)
 }
 \description{
-Stand tables for secondary Nothofagus alpina-dominated forests
+Stand tables for secondary \emph{Nothofagus alpina}-dominated forests
 in different locations in southern Chile.
 }
 \examples{
@@ -37,9 +38,10 @@ table(df$site,df$sector,df$dclass)
 \references{
 \itemize{
 \item Wadsworth RK. 1976. Aspectos ecologicos y crecimiento del
-rauli (Nothofagus alpina) y sus asociados en bosques de segundo crecimiento
-de las provincias de Bio-Bio, Malleco y Cautin, Chile.
-Boletin Tecnico No. 37, Fac. Cs. Forestales, Universidad de Chile,
+raulí (\emph{Nothofagus alpina}) y sus asociados en bosques de
+segundo crecimiento
+de las provincias de Bío-Bío, Malleco y Cautín, Chile.
+Boletin Técnico No. 37, Fac. Cs. Forestales, Universidad de Chile,
 Santiago, Chile.
 }
 }

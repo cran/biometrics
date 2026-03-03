@@ -1,15 +1,15 @@
 citHeader("To cite the biometrics package in publications use:")
 
 bibentry(bibtype = "Manual",
-  title        = "{biometrics: Functions and Datasets for Forest Biometrics and Modelling}",
-  author       = "Salas-Eljatib, C.",
-  year         = "2025",
-  note    = "R package version 1.0.2",
+  title        = "{biometrics: A Package for Biometrics and Modelling}",
+  author       = "C. Salas-Eljatib and N. Campos and M. Marivil",
+  year         = "2026",
+  note    = "R package version 1.0.3",
   doi      = "10.32614/CRAN.package.biometrics",
   url      = "https://CRAN.R-project.org/package=biometrics",
 
   textVersion  =
-  paste("Salas-Eljatib, C. 2025.",
-        "biometrics: Functions and Datasets for Forest Biometrics and Modelling.",
-        "R package version 1.0.2","https://doi.org/10.32614/CRAN.package.biometrics")
+  paste("Salas-Eljatib C., Campos N., and Marivil M. 2026.",
+        "biometrics: A Package for Biometrics and Modelling.",
+        "R package version 1.0.3","https://doi.org/10.32614/CRAN.package.biometrics")
 )

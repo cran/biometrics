@@ -7,30 +7,31 @@
 #'  units of measurement of the metric or imperial system.
 #'
 #' @title Function to computes the diameter of the tree of average basal area.
-#' @param N is stand tree density. By default the unit of measurement
+#' @param n is stand tree density. By default the unit of measurement
 #' is trees/ha, but if the option 'metrics' is set to `FALSE`, the unit is
 #' trees/acre.
-#' @param G is stand basal area. By default the unit of measurement
+#' @param g is stand basal area. By default the unit of measurement
 #' must be entered in m\eqn{^{2}}{^2}/ha, but if the option 'metrics'
 #' is set to `FALSE`, the unit must be ft\eqn{^{2}}{^2}/ha.
-#' @param metrics is a logic value, the default is to `TRUE`, thus \eqn{N} has to
-#'  be entered in the unit 'trees/ha', and \eqn{G} must be entered
-#'   in m\eqn{^{2}}{^2}/ha. If metrics is `FALSE`, \eqn{N} must be entered in
-#' trees/acre, and \eqn{G} in ft\eqn{^{2}}{^2}/ha.
+#' @param metrics is a logic value, the default is set to `TRUE`,
+#' thus both variables must be entered in the metric system, i.e.,
+#' \eqn{N} in 'trees/ha', and \eqn{G} in m\eqn{^{2}}{^2}/ha.
+#' If metrics is `FALSE`, \eqn{N} must be in
+#' trees/acre, and \eqn{G} in ft\eqn{^{2}}{^2}/acre.
 #'
 #' @return Returns the diameter of the tree of average basal area.
 #' @author Christian Salas-Eljatib.
 #' @examples
 #'
 #' ##Using the function
-#' dg(N=1000, G=55)
-#' dg(N=210, G=160, metrics=FALSE)
-#' @rdname dg
+#' dg.fx(n=1000, g=55)
+#' dg.fx(n=210, g=160, metrics=FALSE)
+#' @rdname dg.fx
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-dg <- function(N=N,G=G,metrics=TRUE){
-  if(metrics==TRUE){out<-sqrt((G/N)*(40000/pi))}
-  if(metrics==FALSE){out<-sqrt((G/N)*((4*144)/pi))}
+dg.fx <- function(n=n,g=g,metrics=TRUE){
+  if(metrics==TRUE){out<-sqrt((g/n)*((4*10000)/pi))}
+  if(metrics==FALSE){out<-sqrt((g/n)*((4*12*12)/pi))}
   return(out)
-  }
+}

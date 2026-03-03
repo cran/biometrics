@@ -1,28 +1,40 @@
 Package: biometrics
-Title: Functions and Datasets for Forest Biometrics and Modelling
-Version: 1.0.2
-Authors@R: c(person("Christian Salas-Eljatib", email = "cseljatib@gmail.com",role = c("aut", "cre"), comment = c(ORCID = "0000-0002-8468-0829")),
-             person("Campos", "Nicolás", role = "ctb", comment = c(ORCID = "0009-0001-9534-9808", "since 2025")),
-             person("Marivil", "Marcos", role = "ctb", comment = "up to 2020"),
-             person("Riquelme", "Joaquin", role = "ctb", comment = "up to 2020"))
-Description: A system of functions and data aiming to apply quantitative analyses to forest 
-    ecology, silviculture and decision-making. Besides, the package helps to carry out data 
-    management, exploratory analysis, and model assessment. 
+Title: A Package for Biometrics and Modelling
+Version: 1.0.3
+Authors@R: c(person(given = "Christian",
+                    family = "Salas-Eljatib",
+		    role = c("aut", "cre"),
+		    email = "cseljatib@gmail.com",
+		    comment = c(ORCID = "0000-0002-8468-0829")),
+             person(given = "Nicolas",
+	            family = "Campos",
+		    role = "ctb",
+		    comment = c(ORCID = "0009-0001-9534-9808", "since 2025")),
+             person(given = "Marcos",
+	            family = "Marivil",
+		    role = "ctb",
+		    comment = c("https://biometriaforestal.uchile.cl", "since 2025")))
+Description: 
+    A system of functions and datasets to carry out quantitative analyses in the biological  
+    sciences. The package facilitates data management, exploratory analyses, and model assessment. 
+    Although it currently focuses on forest ecology, silviculture and decision-making, most of
+    the package functions are applicable across several disciplines, including economics,
+    environmental science, and healthcare. 
 License: GPL (>= 3)
+URL: https://eljatib.com, https://biometriaforestal.uchile.cl
 Encoding: UTF-8
-RoxygenNote: 7.3.2
+RoxygenNote: 7.3.3
 Depends: R (>= 3.5)
 LazyData: true
-Imports: graphics, grDevices, stats, utils
+Imports: graphics, grDevices, gtools, nlme, stats, utils
 Suggests: datana, lattice
 NeedsCompilation: no
-Packaged: 2025-08-20 20:36:59 UTC; christian
+Packaged: 2026-03-03 08:35:59 UTC; christian
 Author: Christian Salas-Eljatib [aut, cre] (ORCID:
     <https://orcid.org/0000-0002-8468-0829>),
-  Campos Nicolás [ctb] (ORCID: <https://orcid.org/0009-0001-9534-9808>,
+  Nicolas Campos [ctb] (ORCID: <https://orcid.org/0009-0001-9534-9808>,
     since 2025),
-  Marivil Marcos [ctb] (up to 2020),
-  Riquelme Joaquin [ctb] (up to 2020)
+  Marcos Marivil [ctb] (https://biometriaforestal.uchile.cl, since 2025)
 Maintainer: Christian Salas-Eljatib <cseljatib@gmail.com>
 Repository: CRAN
-Date/Publication: 2025-08-20 21:00:02 UTC
+Date/Publication: 2026-03-03 09:00:09 UTC
