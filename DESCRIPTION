@@ -1,6 +1,6 @@
 Package: biometrics
 Title: A Package for Biometrics and Modelling
-Version: 1.0.3
+Version: 1.0.4
 Authors@R: c(person(given = "Christian",
                     family = "Salas-Eljatib",
 		    role = c("aut", "cre"),
@@ -29,7 +29,7 @@ LazyData: true
 Imports: graphics, grDevices, gtools, nlme, stats, utils
 Suggests: datana, lattice
 NeedsCompilation: no
-Packaged: 2026-03-03 08:35:59 UTC; christian
+Packaged: 2026-03-20 07:10:12 UTC; christian
 Author: Christian Salas-Eljatib [aut, cre] (ORCID:
     <https://orcid.org/0000-0002-8468-0829>),
   Nicolas Campos [ctb] (ORCID: <https://orcid.org/0009-0001-9534-9808>,
@@ -37,4 +37,4 @@ Author: Christian Salas-Eljatib [aut, cre] (ORCID:
   Marcos Marivil [ctb] (https://biometriaforestal.uchile.cl, since 2025)
 Maintainer: Christian Salas-Eljatib <cseljatib@gmail.com>
 Repository: CRAN
-Date/Publication: 2026-03-03 09:00:09 UTC
+Date/Publication: 2026-03-20 16:50:21 UTC

@@ -4,12 +4,12 @@ bibentry(bibtype = "Manual",
   title        = "{biometrics: A Package for Biometrics and Modelling}",
   author       = "C. Salas-Eljatib and N. Campos and M. Marivil",
   year         = "2026",
-  note    = "R package version 1.0.3",
+  note    = "R package version 1.0.4",
   doi      = "10.32614/CRAN.package.biometrics",
   url      = "https://CRAN.R-project.org/package=biometrics",
 
   textVersion  =
   paste("Salas-Eljatib C., Campos N., and Marivil M. 2026.",
         "biometrics: A Package for Biometrics and Modelling.",
-        "R package version 1.0.3","https://doi.org/10.32614/CRAN.package.biometrics")
+        "R package version 1.0.4","https://doi.org/10.32614/CRAN.package.biometrics")
 )

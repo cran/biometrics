@@ -5,7 +5,7 @@
 \title{Function that computes the result of the Ogawa allometric
 model.}
 \usage{
-ogawa.fx(x, alpha, beta, gamma, phi = 0)
+ogawa.fx(x, alpha, beta, gamma, upsilon = 0)
 }
 \arguments{
 \item{x}{is the predictor variable.}
@@ -16,13 +16,13 @@ ogawa.fx(x, alpha, beta, gamma, phi = 0)
 
 \item{gamma}{is the  coefficient-parameter  \eqn{\gamma}.}
 
-\item{phi}{is an optional constant term that force the prediction
+\item{upsilon}{is an optional constant term that force the prediction
 of \emph{y} when \emph{x=0}. Thus, the new model becomes
-\eqn{ y_i = \phi+ f(x_i,\mathbf{\theta})}, where
+\eqn{ y_i = \Upsilon+ f(x_i,\mathbf{\theta})}, where
 \eqn{\mathbf{\theta}} is the vector of coefficients of
 the above described function represented by
 \eqn{f(\cdot)}. The default
-value for \eqn{\phi} is 0.}
+value for \eqn{\Upsilon} is 0.}
 }
 \value{
 Returns the inverse of the response variable based upon
@@ -32,8 +32,8 @@ the predictor variable and the coefficients shown above.
 Function of the Ogawa allometric
 model, based upon parameters (i.e., coefficients) and a variable,
 as defined by the mathematical expression
-\deqn{\frac{1}{y_i}= \frac{1}{\alpha}
-+ \frac{1}{\beta {x_i}^{\gamma}},
+\deqn{{y_i}= \left(\frac{1}{\alpha}
++ \frac{1}{\beta {x_i}^{\gamma}}\right)^{-1},
 }
 where: \eqn{y_i} and \eqn{x_i} are the response
 and predictor variable, respectively, for the \emph{i}-th observation;

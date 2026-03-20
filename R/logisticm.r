@@ -9,16 +9,16 @@
 #' @title A function having the mathematical expression of
 #' the Logistic modified model.
 #' @param x is the predictor variable.
-#' @param a is the coefficient-parameter  \eqn{\alpha}.
-#' @param b is the  coefficient-parameter  \eqn{\beta}.
-#' @param c is the  coefficient-parameter  \eqn{\gamma}.
-#' @param phi is an optional constant term that force the prediction
+#' @param alpha is the coefficient-parameter  \eqn{\alpha}.
+#' @param beta is the  coefficient-parameter  \eqn{\beta}.
+#' @param gamma is the  coefficient-parameter  \eqn{\gamma}.
+#' @param upsilon is an optional constant term that force the prediction
 #' of *y* when *x=0*. Thus, the new model becomes
-#' \eqn{ y_i = \phi+ f\left(x_i,\mathbf{\theta}\right)}, where
+#' \eqn{ y_i = \Upsilon+ f\left(x_i,\mathbf{\theta}\right)}, where
 #' \eqn{\mathbf{\theta}} is the vector of coefficients of
 #' the above described function represented by
 #' \eqn{f(\cdot)}. The default
-#' value for \eqn{\phi} is 0.
+#' value for \eqn{\Upsilon} is 0.
 #'
 #' @return Returns the response variable based upon
 #' the predictor variable and the coefficients. 
@@ -37,14 +37,13 @@
 #' # Predictor variable values to be used
 #' time<-seq(0.1,65,by=0.01)
 #' # Using the function
-#' y<-logistm.fx(x=time,a=22,b=8.59,c=4.72)
+#' y<-logistm.fx(x=time,alpha=22,beta=8.59,gamma=4.72)
 #' plot(time,y,type="l")
 #' #'  
 #' @rdname logistm.fx
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-logistm.fx <-  function(x, a=alpha, b=beta, c=gamma, phi=0){
-    alpha<-a;beta<-b;gamma<-c    
-    phi+ alpha/(1+exp(-(x-beta)/gamma))  
+logistm.fx <-  function(x,alpha,beta,gamma, upsilon=0){
+   upsilon + alpha/(1+exp(-(x-beta)/gamma))  
 }

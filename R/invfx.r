@@ -9,15 +9,15 @@
 #' @title Function to compute the result of the simple linear
 #' inverse model.
 #' @param x is the predictor variable.
-#' @param a is the coefficient-parameter  \eqn{\alpha}.
-#' @param b is the  coefficient-parameter  \eqn{\beta}.
-#' @param phi is an optional constant term that force the prediction
+#' @param alpha is the coefficient-parameter  \eqn{\alpha}.
+#' @param beta is the  coefficient-parameter  \eqn{\beta}.
+#' @param upsilon is an optional constant term that force the prediction
 #' of *y* when *x=0*. Thus, the new model becomes
-#' \eqn{y_i = \phi + f(x_i,\mathbf{\theta})}, where
+#' \eqn{y_i = \Upsilon + f(x_i,\mathbf{\theta})}, where
 #' \eqn{\mathbf{\theta}} is the vector of coefficients of
 #' the above described function represented by
 #' \eqn{f(\cdot)}. The default
-#' value for \eqn{\phi} is 0. Note that this restriction must be
+#' value for \eqn{\Upsilon} is 0. Note that this restriction must be
 #' imposed during the fitting of the model.
 #'
 #' @return Returns the response variable based upon
@@ -32,15 +32,14 @@
 #' @examples
 #' # Predictor variable to be used is 40 
 #' # Using the function
-#' inv.fx(x=40,a=25,b=115)
+#' inv.fx(x=40,alpha=25,beta=115)
 #' # The effect of the constant term phi
-#' inv.fx(x=40,a=25,b=115, phi=2.5)
+#' inv.fx(x=40,alpha=25,beta=115, upsilon=2.5)
 #'  
 #' @rdname inv.fx
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-inv.fx <- function(x,a=alpha, b=beta, phi=0){
-    alpha<-a;beta<-b;    
-    phi+ (alpha-(beta/x))
+inv.fx <- function(x,alpha,beta,upsilon=0){
+    upsilon+ (alpha-(beta/x))
 }

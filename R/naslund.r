@@ -9,15 +9,15 @@
 #' @title A function having the mathematical expression of
 #' the Naslund model.
 #' @param x is the predictor variable.
-#' @param a is the coefficient-parameter  \eqn{\alpha}.
-#' @param b is the  coefficient-parameter  \eqn{\beta}.
-#' @param phi is an optional constant term that force the prediction
+#' @param alpha is the coefficient-parameter  \eqn{\alpha}.
+#' @param beta is the  coefficient-parameter  \eqn{\beta}.
+#' @param upsilon is an optional constant term that force the prediction
 #' of *y* when *x=0*. Thus, the new model becomes
-#' \eqn{ y_i = \phi+ f\left(x_i,\mathbf{\theta}\right)}, where
+#' \eqn{ y_i = \Upsilon+ f\left(x_i,\mathbf{\theta}\right)}, where
 #' \eqn{\mathbf{\theta}} is the vector of coefficients of
 #' the above described function represented by
 #' \eqn{f(\cdot)}. The default
-#' value for \eqn{\phi} is 0.
+#' value for \eqn{\Upsilon} is 0.
 #'
 #' @return Returns the response variable based upon
 #' the predictor variable and the coefficients. 
@@ -34,14 +34,13 @@
 #' # Predictor variable values to be used
 #' time<-seq(5,60,by=0.01)
 #' # Using the function
-#' y<-naslund.fx(x=time,a=1.5,b=.37)
+#' y<-naslund.fx(x=time,alpha=1.5,beta=.37)
 #' plot(time,y,type="l")
 #'  
 #' @rdname naslund.fx
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-naslund.fx <- function(x, a=alpha, b=beta, phi=0){
-    alpha<-a;beta<-b;    
-    phi+ ( (x^2)/((alpha+beta*x)^2)) 
+naslund.fx <- function(x, alpha, beta, upsilon=0){
+    upsilon + ( (x^2)/((alpha+beta*x)^2)) 
 }

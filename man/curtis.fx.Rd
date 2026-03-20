@@ -5,22 +5,22 @@
 \title{Function to computes the result of the Curtis's allometric
 model.}
 \usage{
-curtis.fx(x, a = alpha, b = beta, phi = 0)
+curtis.fx(x, alpha, beta, upsilon = 0)
 }
 \arguments{
 \item{x}{is the predictor variable.}
 
-\item{a}{is the coefficient-parameter  \eqn{\alpha}.}
+\item{alpha}{is the coefficient-parameter  \eqn{\alpha}.}
 
-\item{b}{is the  coefficient-parameter  \eqn{\beta}.}
+\item{beta}{is the  coefficient-parameter  \eqn{\beta}.}
 
-\item{phi}{is an optional constant term that force the prediction
+\item{upsilon}{is an optional constant term that force the prediction
 of \emph{y} when \emph{x=0}. Thus, the new model becomes
-\eqn{ y_i = \phi+ f(x_i,\mathbf{\theta})}, where
+\eqn{ y_i = \Upsilon+ f(x_i,\mathbf{\theta})}, where
 \eqn{\mathbf{\theta}} is the vector of coefficients of
 the above described function represented by
 \eqn{f(\cdot)}. The default
-value for \eqn{\phi} is 0.}
+value for \eqn{\Upsilon} is 0.}
 }
 \value{
 Returns the response variable based upon
@@ -39,7 +39,7 @@ and the rest are parameters (i.e., coefficients).
 # Predictor variable values to be used
 time<-seq(5,60,by=0.01)
 # Using the function
-y<-curtis.fx(x=time,a=20,b=8)
+y<-curtis.fx(x=time,alpha=20,beta=8)
 plot(time,y,type="l")
  
 }

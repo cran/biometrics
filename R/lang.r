@@ -10,15 +10,15 @@
 #' @title Function to computes the result of the Curtis's allometric
 #' model.
 #' @param x is the predictor variable.
-#' @param a is the coefficient-parameter  \eqn{\alpha}.
-#' @param b is the  coefficient-parameter  \eqn{\beta}.
-#' @param phi is an optional constant term that force the prediction
+#' @param alpha is the coefficient-parameter  \eqn{\alpha}.
+#' @param beta is the  coefficient-parameter  \eqn{\beta}.
+#' @param upsilon is an optional constant term that force the prediction
 #' of *y* when *x=0*. Thus, the new model becomes
-#' \eqn{ y_i = \phi+ f(x_i,\mathbf{\theta})}, where
+#' \eqn{ y_i = \Upsilon+ f(x_i,\mathbf{\theta})}, where
 #' \eqn{\mathbf{\theta}} is the vector of coefficients of
 #' the above described function represented by
 #' \eqn{f(\cdot)}. The default
-#' value for \eqn{\phi} is 0.
+#' value for \eqn{\Upsilon} is 0.
 #'
 #' @return Returns the response variable based upon
 #' the predictor variable and the coefficients. 
@@ -36,14 +36,13 @@
 #' # Predictor variable values to be used
 #' time<-seq(.1,60,by=0.01)
 #' # Using the function
-#' y<-lang.fx(x=time, a=37,b=0.05)
+#' y<-lang.fx(x=time, alpha=37,beta=0.05)
 #' plot(time,y,type="l")
 #'  
 #' @rdname lang.fx
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-lang.fx <- function(x, a=alpha, b=beta, phi=0){
-    alpha<-a;beta<-b;    
-    phi+ alpha*(1/(1+(1/(beta*x))))
+lang.fx <- function(x,alpha, beta, upsilon=0){   
+    upsilon+ alpha*(1/(1+(1/(beta*x))))
 }

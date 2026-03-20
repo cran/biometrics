@@ -13,14 +13,14 @@
 #' @title Function to compute the result of the asymptotic
 #' regression model, as an allometric functional form.
 #' @param x is the predictor variable.
-#' @param a is the coefficient-parameter  \eqn{\alpha}.
-#' @param b is the  coefficient-parameter  \eqn{\beta}.
-#' @param phi is an optional constant term that force the prediction
+#' @param alpha is the coefficient-parameter  \eqn{\alpha}.
+#' @param beta is the  coefficient-parameter  \eqn{\beta}.
+#' @param upsilon is an optional constant term that force the prediction
 #' of *y* when *x=0*. Thus, the new model becomes
-#' \eqn{ y_i = \alpha + \left(\phi-\alpha\right) \left\{\mathrm{e}^{
+#' \eqn{ y_i = \alpha + \left(\Upsilon-\alpha\right) \left\{\mathrm{e}^{
 #' \left[-\left(\mathrm{e}^{-\beta}\right) x_i \right]
 #' }\right\} }, thus the model will have only two parameters.
-#' By default \eqn{\phi} is set to `0`.
+#' By default \eqn{\Upsilon} is set to `0`.
 #'
 #' @return Returns the response variable based upon
 #' the predictor variable and the coefficients. 
@@ -38,20 +38,19 @@
 #' # 2-parameters variant
 #' # Predictor variable values to be used
 #' time<-seq(0,50,by=0.1)
-#' # Using the function, phi must be provided
-#' y<-asymreg.fx(x=time,a=20,b=2.5,phi =5)
+#' # Using the function, upsilon must be provided
+#' y<-asymreg.fx(x=time,alpha=20,beta=2.5,upsilon =5)
 #' plot(time,y,type="l",ylim=c(0,20))
 #'  
 #' @rdname asymreg.fx
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-asymreg.fx <- function(x, a=alpha, b=beta, phi=0){
-    alpha<-a;beta<-b;
+asymreg.fx <- function(x, alpha, beta, upsilon=0){
     ## if(is.na(c)==FALSE){gamma<-c} ##version con offset
     ## if(is.na(c)==FALSE){y=alpha +(beta-alpha)*(exp(-exp(-gamma)*x))}   
     ##modelo forzado para cuando x(0)-->y=phi
-    alpha +(phi-alpha)*(exp(-exp(-beta)*x))    
-##when phi, which is y(0), is defined, then the model has only
+    alpha +(upsilon-alpha)*(exp(-exp(-beta)*x))    
+##when upsilon, which is y(0), is defined, then the model has only
 ## two parameters
 }

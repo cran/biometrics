@@ -12,15 +12,15 @@
 #' @title A function having the mathematical expression of
 #' the Johnson-Schumacher model.
 #' @param x is the predictor variable.
-#' @param a is the coefficient-parameter  \eqn{\alpha}.
-#' @param b is the  coefficient-parameter  \eqn{\beta}.
-#' @param phi is an optional constant term that force the prediction
+#' @param alpha is the coefficient-parameter  \eqn{\alpha}.
+#' @param beta is the  coefficient-parameter  \eqn{\beta}.
+#' @param upsilon is an optional constant term that force the prediction
 #' of *y* when *x=0*. Thus, the new model becomes
-#' \eqn{ y_i = \phi+ f(x_i,\mathbf{\theta})}, where
+#' \eqn{ y_i = \Upsilon+ f(x_i,\mathbf{\theta})}, where
 #' \eqn{\mathbf{\theta}} is the vector of coefficients of
 #' the above described function represented by
 #' \eqn{f(\cdot)}. The default
-#' value for \eqn{\phi} is 0.
+#' value for \eqn{\Upsilon} is 0.
 #'
 #' @return Returns the response variable based upon
 #' the predictor variable and the coefficients. 
@@ -43,14 +43,13 @@
 #' # Predictor variable values to be used
 #' d<-seq(5,60,by=0.01)
 #' # Using the function
-#' h<-schuma.fx(x=d,a=3.87,b=4.38)
+#' h<-schuma.fx(x=d,alpha=3.87,beta=4.38)
 #' plot(d,h,type="l")
 #'  
 #' @rdname schum.fx
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-schuma.fx <- function(x=x, a=alpha, b=beta, phi=0){
-    alpha<-a;beta<-b;    
-    phi+ alpha*exp(-beta/x ) 
+schuma.fx <- function(x, alpha, beta, upsilon=0){
+    upsilon + alpha*exp(-beta/x ) 
 }

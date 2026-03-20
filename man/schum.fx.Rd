@@ -5,22 +5,22 @@
 \title{A function having the mathematical expression of
 the Johnson-Schumacher model.}
 \usage{
-schuma.fx(x = x, a = alpha, b = beta, phi = 0)
+schuma.fx(x, alpha, beta, upsilon = 0)
 }
 \arguments{
 \item{x}{is the predictor variable.}
 
-\item{a}{is the coefficient-parameter  \eqn{\alpha}.}
+\item{alpha}{is the coefficient-parameter  \eqn{\alpha}.}
 
-\item{b}{is the  coefficient-parameter  \eqn{\beta}.}
+\item{beta}{is the  coefficient-parameter  \eqn{\beta}.}
 
-\item{phi}{is an optional constant term that force the prediction
+\item{upsilon}{is an optional constant term that force the prediction
 of \emph{y} when \emph{x=0}. Thus, the new model becomes
-\eqn{ y_i = \phi+ f(x_i,\mathbf{\theta})}, where
+\eqn{ y_i = \Upsilon+ f(x_i,\mathbf{\theta})}, where
 \eqn{\mathbf{\theta}} is the vector of coefficients of
 the above described function represented by
 \eqn{f(\cdot)}. The default
-value for \eqn{\phi} is 0.}
+value for \eqn{\Upsilon} is 0.}
 }
 \value{
 Returns the response variable based upon
@@ -42,7 +42,7 @@ Salas-Eljatib et al (2021) and Salas-Eljatib (2025).
 # Predictor variable values to be used
 d<-seq(5,60,by=0.01)
 # Using the function
-h<-schuma.fx(x=d,a=3.87,b=4.38)
+h<-schuma.fx(x=d,alpha=3.87,beta=4.38)
 plot(d,h,type="l")
  
 }

@@ -1,7 +1,7 @@
 #' Function of the  Schnute allometric
 #' model, based upon parameters (i.e., coefficients) and a variable,
 #' as defined by the mathematical expression
-#' \deqn{y_i=\left\{\phi^{\alpha}+(\gamma^{\alpha}-\phi^{\alpha})
+#' \deqn{y_i=\left\{\Upsilon^{\alpha}+(\gamma^{\alpha}-\Upsilon^{\alpha})
 #'  \frac{1-\mathrm{e}^{-\beta(x_i)}}{1-\mathrm{e}^{-\beta(x_2)}}
 #' \right \}^{1/\alpha},}
 #' where: \eqn{y_i} and \eqn{x_i} are the response
@@ -13,11 +13,11 @@
 #' @title Function that computes the result of the Schnute 
 #' allometric model.
 #' @param x is the predictor variable.
-#' @param a is the coefficient-parameter  \eqn{\alpha}.
-#' @param b is the  coefficient-parameter  \eqn{\beta}.
-#' @param c is the  coefficient-parameter  \eqn{\gamma}.
-#' @param phi is an optional constant term that force the prediction
-#' of *y* when *x=0*. The default value for \eqn{\phi} is 0.
+#' @param alpha is the coefficient-parameter  \eqn{\alpha}.
+#' @param beta is the  coefficient-parameter  \eqn{\beta}.
+#' @param gamma is the  coefficient-parameter  \eqn{\gamma}.
+#' @param upsilon is an optional constant term that force the prediction
+#' of *y* when *x=0*. The default value for \eqn{\Upsilon} is 0.
 #' @param x1 is the minimum value for the x variable. The default
 #' value is internally computed from the sample.
 #' @param x2 is the maximumvalue for the x variable. The default
@@ -38,19 +38,18 @@
 #' # Predictor variable values to be used
 #' d<-seq(5,60,by=0.01)
 #' # Using the function
-#' h<-schnute.fx(x=d,a=1.77,b=0.01,c=28)
+#' h<-schnute.fx(x=d,alpha=1.77,beta=0.01,gamma=28)
 #' plot(d,h,type="l")
 #'  
 #' @rdname schnute.fx
 #' @export
 #'
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-schnute.fx <- function(x, a=alpha, b=beta, c=gamma, phi=0,
+schnute.fx <- function(x, alpha, beta, gamma, upsilon=0,
                        x1=min(x),x2=max(x))
 {
-    alpha<-a;beta<-b;gamma<-c
     (
-        (phi^alpha) + ((gamma^alpha) - (phi^alpha)) *
+        (upsilon^alpha) + ((gamma^alpha) - (upsilon^alpha)) *
         ((1-exp(-beta*(x-x1)))/(1-exp(-beta*(x2-x1))))
     )^(1/alpha)
 }

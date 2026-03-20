@@ -19,7 +19,7 @@
 #' \item{dap}{Diámetro a la altura del pecho, en cm.}
 #' \item{atot}{Altura total, en m.}
 #'  \item{d6}{Diámetro fustal a los 6 m, en cm.}
-#' \item{vtot}{Volumen bruto total, en m³ con corteza.}
+#' \item{vtot}{Volumen bruto total, en m\eqn{^{3}}{^3} con corteza.}
 #'  }
 #' @source
 #' Los datos fueron cedidos por el Dr. Christian Salas-Eljatib,

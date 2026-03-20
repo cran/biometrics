@@ -5,24 +5,24 @@
 \title{A function having the mathematical expression of
 the Strand model.}
 \usage{
-strandg.fx(x, a = alpha, b = beta, c = gamma, phi = 0)
+strandg.fx(x, alpha, beta, gamma, upsilon = 0)
 }
 \arguments{
 \item{x}{is the predictor variable.}
 
-\item{a}{is the coefficient-parameter  \eqn{\alpha}.}
+\item{alpha}{is the coefficient-parameter  \eqn{\alpha}.}
 
-\item{b}{is the  coefficient-parameter  \eqn{\beta}.}
+\item{beta}{is the  coefficient-parameter  \eqn{\beta}.}
 
-\item{c}{is the  coefficient-parameter  \eqn{\gamma}.}
+\item{gamma}{is the  coefficient-parameter  \eqn{\gamma}.}
 
-\item{phi}{is an optional constant term that force the prediction
+\item{upsilon}{is an optional constant term that force the prediction
 of \emph{y} when \emph{x=0}. Thus, the new model becomes
-\eqn{ y_i = \phi+ f(x_i,\mathbf{\theta})}, where
+\eqn{ y_i = \Upsilon+ f(x_i,\mathbf{\theta})}, where
 \eqn{\mathbf{\theta}} is the vector of coefficients of
 the above described function represented by
 \eqn{f(\cdot)}. The default
-value for \eqn{\phi} is 0.}
+value for \eqn{\Upsilon} is 0.}
 }
 \value{
 Returns the response variable based upon
@@ -41,7 +41,7 @@ and the rest are parameters (i.e., coefficients).
 # Predictor variable values to be used
 time<-seq(5,60,by=0.01)
 # Using the function
-y<-strandg.fx(x=time,a=0.98,b=0.52,c=4.83)
+y<-strandg.fx(x=time,alpha=0.98,beta=0.52,gamma=4.83)
 plot(time,y,type="l")
  
 }

@@ -5,22 +5,22 @@
 \title{Function to compute the result of the simple linear
 inverse model.}
 \usage{
-inv.fx(x, a = alpha, b = beta, phi = 0)
+inv.fx(x, alpha, beta, upsilon = 0)
 }
 \arguments{
 \item{x}{is the predictor variable.}
 
-\item{a}{is the coefficient-parameter  \eqn{\alpha}.}
+\item{alpha}{is the coefficient-parameter  \eqn{\alpha}.}
 
-\item{b}{is the  coefficient-parameter  \eqn{\beta}.}
+\item{beta}{is the  coefficient-parameter  \eqn{\beta}.}
 
-\item{phi}{is an optional constant term that force the prediction
+\item{upsilon}{is an optional constant term that force the prediction
 of \emph{y} when \emph{x=0}. Thus, the new model becomes
-\eqn{y_i = \phi + f(x_i,\mathbf{\theta})}, where
+\eqn{y_i = \Upsilon + f(x_i,\mathbf{\theta})}, where
 \eqn{\mathbf{\theta}} is the vector of coefficients of
 the above described function represented by
 \eqn{f(\cdot)}. The default
-value for \eqn{\phi} is 0. Note that this restriction must be
+value for \eqn{\Upsilon} is 0. Note that this restriction must be
 imposed during the fitting of the model.}
 }
 \value{
@@ -39,9 +39,9 @@ and the rest are parameters (i.e., coefficients).
 \examples{
 # Predictor variable to be used is 40 
 # Using the function
-inv.fx(x=40,a=25,b=115)
+inv.fx(x=40,alpha=25,beta=115)
 # The effect of the constant term phi
-inv.fx(x=40,a=25,b=115, phi=2.5)
+inv.fx(x=40,alpha=25,beta=115, upsilon=2.5)
  
 }
 \references{

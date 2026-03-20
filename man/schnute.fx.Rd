@@ -5,27 +5,19 @@
 \title{Function that computes the result of the Schnute
 allometric model.}
 \usage{
-schnute.fx(
-  x,
-  a = alpha,
-  b = beta,
-  c = gamma,
-  phi = 0,
-  x1 = min(x),
-  x2 = max(x)
-)
+schnute.fx(x, alpha, beta, gamma, upsilon = 0, x1 = min(x), x2 = max(x))
 }
 \arguments{
 \item{x}{is the predictor variable.}
 
-\item{a}{is the coefficient-parameter  \eqn{\alpha}.}
+\item{alpha}{is the coefficient-parameter  \eqn{\alpha}.}
 
-\item{b}{is the  coefficient-parameter  \eqn{\beta}.}
+\item{beta}{is the  coefficient-parameter  \eqn{\beta}.}
 
-\item{c}{is the  coefficient-parameter  \eqn{\gamma}.}
+\item{gamma}{is the  coefficient-parameter  \eqn{\gamma}.}
 
-\item{phi}{is an optional constant term that force the prediction
-of \emph{y} when \emph{x=0}. The default value for \eqn{\phi} is 0.}
+\item{upsilon}{is an optional constant term that force the prediction
+of \emph{y} when \emph{x=0}. The default value for \eqn{\Upsilon} is 0.}
 
 \item{x1}{is the minimum value for the x variable. The default
 value is internally computed from the sample.}
@@ -41,7 +33,7 @@ the predictor variable and the coefficients.
 Function of the  Schnute allometric
 model, based upon parameters (i.e., coefficients) and a variable,
 as defined by the mathematical expression
-\deqn{y_i=\left\{\phi^{\alpha}+(\gamma^{\alpha}-\phi^{\alpha})
+\deqn{y_i=\left\{\Upsilon^{\alpha}+(\gamma^{\alpha}-\Upsilon^{\alpha})
  \frac{1-\mathrm{e}^{-\beta(x_i)}}{1-\mathrm{e}^{-\beta(x_2)}}
 \right \}^{1/\alpha},}
 where: \eqn{y_i} and \eqn{x_i} are the response
@@ -54,7 +46,7 @@ Salas-Eljatib et al (2021).
 # Predictor variable values to be used
 d<-seq(5,60,by=0.01)
 # Using the function
-h<-schnute.fx(x=d,a=1.77,b=0.01,c=28)
+h<-schnute.fx(x=d,alpha=1.77,beta=0.01,gamma=28)
 plot(d,h,type="l")
  
 }
